@@ -4,6 +4,7 @@ class window.AppView extends Backbone.View
     <button class="new-game">New Game</button>
     <div class="player-hand-container"></div>
     <div class="dealer-hand-container"></div>
+    <div class="chip-count-container"></div>
   '
 
   gameResTemp: _.template '
@@ -30,10 +31,16 @@ class window.AppView extends Backbone.View
     @$el.html @template()
     @$('.player-hand-container').html new HandView(collection: @model.get 'playerHand').el
     @$('.dealer-hand-container').html new HandView(collection: @model.get 'dealerHand').el
+    @$('.chip-count-container').html new ChipCountView(model: @model.get 'chipCount').el
 
   renderWin: ->
     @$el.append '<span>You Won!</span>'
+    @model.get('chipCount').addChip()
+    console.log(@model.get('chipCount'))
 
   renderLoss: ->
     @$el.append '<span>You Suck!</span>'
+    @model.get('chipCount').subtractChip()
+    console.log(@model.get('chipCount'))
+
 

@@ -14,3 +14,8 @@
 .hand {
   overflow: auto;
 }
+
+body {
+  background-image: url("/felt.jpg");
+  background-color: green;
+}
