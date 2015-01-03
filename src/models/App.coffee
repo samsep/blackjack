@@ -34,6 +34,14 @@ class window.App extends Backbone.Model
 
 
   newGame: ->
-    @initialize()
+    if @get('deck').length < 26
+      @set 'playerHand', @get('deck').dealPlayer()
+      @set 'dealerHand', @get('deck').dealDealer()
+      @get('playerHand').on 'gameOver', => @get('dealerHand').dealerReveal()
+      @get('dealerHand').on 'gameOver', => @results(@scoreCount(@get('playerHand')), @scoreCount(@get('dealerHand')))
+    else
+      @initialize()
+
+    # @get('deck').
     # new AppView(model: new App()).$el.appendTo 'body'
 
