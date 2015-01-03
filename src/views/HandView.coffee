@@ -5,6 +5,7 @@ class window.HandView extends Backbone.View
 
   initialize: ->
     @collection.on 'add remove change', => @render()
+    #@collection.on 'change:gameOver', -> console.log('busted!')
     @render()
 
   render: ->
