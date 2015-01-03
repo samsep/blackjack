@@ -32,3 +32,8 @@ class window.App extends Backbone.Model
     else
        return person.scores()[0]
 
+
+  newGame: ->
+    @initialize()
+    # new AppView(model: new App()).$el.appendTo 'body'
+
