@@ -1,5 +1,6 @@
 .card {
   float: left;
+  margin: auto 0;
   border: solid 1px black;
   max-width: 100%;
   max-height: 100%;
@@ -15,6 +16,15 @@
   overflow: auto;
 }
 
+
+.player-hand-container, .dealer-hand-container, .chip-count-container, .results, span{
+  color: #D9F2C2;
+  font-family: Arial;
+}
+
+.chip-count-container, .results, span{
+  font-size: 30px;
+}
 body {
   background-image: url("/felt.jpg");
   background-color: green;

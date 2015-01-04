@@ -34,12 +34,12 @@ class window.AppView extends Backbone.View
     @$('.chip-count-container').html new ChipCountView(model: @model.get 'chipCount').el
 
   renderWin: ->
-    @$el.append '<span>You Won!</span>'
+    @$el.append '<span class="results">You Won!</span>'
     @model.get('chipCount').addChip()
     console.log(@model.get('chipCount'))
 
   renderLoss: ->
-    @$el.append '<span>You Suck!</span>'
+    @$el.append '<span class="results">You Suck!</span>'
     @model.get('chipCount').subtractChip()
     console.log(@model.get('chipCount'))
 
